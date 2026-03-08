@@ -86,8 +86,8 @@ color: var(--link-color);
 text-decoration: none;
 font-size: 14px;
 transition: color 0.2s;
-word-break: break-word;
-overflow-wrap: break-word;
+word-break: normal;
+overflow-wrap: anywhere;
 }
 .info-value a:hover {
     color: #80c4ff;
