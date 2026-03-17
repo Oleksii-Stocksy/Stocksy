@@ -39,12 +39,17 @@
             <h2 class="section-title">Напишіть мені</h2>
             <div class="card-block feedback-block">
                 <input 
-                    type="text" 
-                    id="user-name" 
-                    class="feedback-input" 
-                    data-testid="name-input" 
-                    placeholder="Ваше ім'я..."
-                >
+    type="text" 
+    id="user-name" 
+    class="feedback-input" 
+    data-testid="name-input" 
+    placeholder="Ваше ім'я..."
+    maxlength="25"
+    minlength="2"
+    pattern="^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ' ]+$"
+    title="Використовуйте лише букви"
+    autocomplete="off"
+>
                 
                 <button 
                     id="contact-btn" 
@@ -68,7 +73,7 @@
                             <div class="option" data-value="mailto:stocksyalex@gmail.com">Ел. пошта</div>
                         </div>
                     </div>
-                    <input type="hidden" id="contact-select-value" value="">
+                    <input type="text" id="user-name" class="feedback-input" data-testid="name-input" placeholder="Ваше ім'я...">
 
                     <button class="go-button" onclick="goToLink()">
                         Перейти <i class="fa-solid fa-arrow-right"></i>

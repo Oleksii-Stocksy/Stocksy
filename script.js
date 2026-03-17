@@ -2,14 +2,14 @@ function handleContactClick() {
     const nameInput = document.getElementById('user-name');
     const menu = document.getElementById('contact-options');
     const greeting = document.getElementById('greeting');
-
-    if (!nameInput?.value.trim()) {
-        alert("Будь ласка, введіть ім'я");
+    const rawName = nameInput?.value.trim() || "";
+    if (rawName.length < 2) {
+        alert("Будь ласка, введіть коректне ім'я (мінімум 2 символи)");
         return;
     }
-
-    // Защищаем от вставки лишних пробелов
-    greeting.textContent = `Вітаю, ${nameInput.value.trim()}! Куди прямуємо?`;
+    const safeName = rawName.replace(/<\/?[^>]+(>|$)/g, "");
+    const displayName = safeName.length > 25 ? safeName.substring(0, 25) + "..." : safeName;
+    greeting.textContent = `Вітаю, ${displayName}! Куди прямуємо?`;
     menu.classList.add('active');
 }
 
@@ -33,7 +33,6 @@ if (customSelect && trigger) {
     });
 }
 
-// Закрытие селекта по клику вне его (вынесено для надежности)
 document.addEventListener('click', () => customSelect?.classList.remove('open'));
 
 function goToLink() {
@@ -42,11 +41,9 @@ function goToLink() {
         alert("Будь ласка, спочатку оберіть варіант зі списку!");
         return;
     }
-
-    // Хирургическое решение проблемы пустой вкладки (как на скриншоте)
     if (url.startsWith('mailto:')) {
-        window.location.href = url; // Откроет почту без новой вкладки
+        window.location.href = url;
     } else {
-        window.open(url, '_blank'); // Для Instagram/Telegram/Facebook
+        window.open(url, '_blank');
     }
 }
