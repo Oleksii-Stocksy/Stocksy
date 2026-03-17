@@ -6,18 +6,19 @@
     content="width=device-width,initial-scale=1.0">
     <title>Олексій Нефедов - Сайт-візитка</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swamp"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet"href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="page-container">
+        <div class="section-group">
             <div class="card-block profile-header">
             <img src="Ава.jpg" class="avatar">
                     <div class="profile-info">
                     <h1 class="profile-name">Олексій Нефедов</h1>
-                        <p class="profile-slogan">IT-Доктор</p>
+                        <p class="profile-slogan">QA-Доктор</p>
                     </div>
             </div>
         <div class="section-group">
@@ -27,28 +28,68 @@
                     <li class="info-label">Телеграм</li>
                     <li class="info-value"><a href="https://t.me/stocksy" target="_blank">@stocksy</a></li>
                     <li class="info-label">Ел. Пошта</li>
-                    <li class="info-value"><a href="stocksyalex@gmail.com">stocksyalex@gmail.com</a></li>
+                    <li class="info-value"><a href="mailto:stocksyalex@gmail.com">stocksyalex@gmail.com</a></li>
                     <li class="info-label">Facebook</li>
                     <li class="info-value"><a href="https://facebook.com/oleksii.nefedov" target="_blank">Oleksii.Nefedov</a></li>
                     <li class="info-label">Git</li>
-                    <li class="info-value"><a href="https://github.com/Stocksy" target="_blank">github.com/Stocksy</a></li>
+                    <li class="info-value"><a href="https://github.com/Oleksii-Stocksy" target="_blank">github.com/Stocksy</a></li>
              </ul>
             </div>
-         </div>
             <div class="section-group">
-                <h2 class="section-title">Чим займаюсь</h2>
-                    <div class="card-block">
-                        <ul class="info-list">
-                             <li class="info-label">Магазин</li>
-                             <li class="info-value"><a href="https://www.instagram.com/stocksy.shop/" target="_blank"><i class="fa-brands fa-instagram"></i>stocksy.shop</a></li>
-                             <li class="info-label">Працюю</li>
-                             <li class="info-value"><p>КНП СМБЛ. Лікар-лаборант</p></li>
-                             <li class="info-label">Тренуюсь</li> 
-                             <li class="info-value"><a href="https://sport-city.com.ua/" target="_blank">Sport-city</a></li>
-                             <li class="info-label">Слухаю</li>
-                             <li class="info-value"><p>Electronic music</p></li>                           
-                        </ul>
-                    </div>                
+            <h2 class="section-title">Напишіть мені</h2>
+            <div class="card-block feedback-block">
+                <input 
+                    type="text" 
+                    id="user-name" 
+                    class="feedback-input" 
+                    data-testid="name-input" 
+                    placeholder="Ваше ім'я..."
+                >
+                
+                <button 
+                    id="contact-btn" 
+                    class="feedback-button" 
+                    data-testid="submit-button"
+                    onclick="handleContactClick()"
+                >
+                    Зв'язатися
+                </button>
+                
+                <div id="contact-options" class="contact-options" data-testid="contact-menu">
+                    <p id="greeting" data-testid="greeting-text" class="greeting-text"></p>
+                    
+                    <div class="dropdown-container">
+                    <div class="custom-select" id="custom-select">
+                        <div class="select-trigger">Оберіть спосіб зв'язку...</div>
+                        <div class="select-options">
+                            <div class="option" data-value="https://www.instagram.com/stocksy.shop/">Instagram</div>
+                            <div class="option" data-value="https://t.me/stocksy">Telegram</div>
+                            <div class="option" data-value="https://facebook.com/oleksii.nefedov">Facebook</div>
+                            <div class="option" data-value="mailto:stocksyalex@gmail.com">Ел. пошта</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="contact-select-value" value="">
+
+                    <button class="go-button" onclick="goToLink()">
+                        Перейти <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                </div>
             </div>
+        </div>
+            
+    <h2 class="section-title">Чим займаюсь</h2>
+    <div class="card-block">
+        <ul class="info-list">
+            <li class="info-label">Магазин</li>
+            <li class="info-value"><a href="https://www.instagram.com/stocksy.shop/" target="_blank"><i class="fa-brands fa-instagram"></i> stocksy.shop</a></li>
+            <li class="info-label">Освіта</li>
+            <li class="info-value">Вища медична; Hillel IT-School</li> 
+            <li class="info-label">Тренуюсь</li> 
+            <li class="info-value"><a href="https://sport-city.com.ua/" target="_blank">Sport-city</a></li>
+            <li class="info-label">Слухаю</li>
+            <li class="info-value">Electronic music</li> 
+        </ul>
+</div> </div> </div> </div> <script src="script.js"></script> 
 </body>
  </html>
