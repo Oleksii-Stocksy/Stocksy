@@ -36,51 +36,52 @@
              </ul>
             </div>
             <div class="section-group">
-            <h2 class="section-title">Напишіть мені</h2>
-            <div class="card-block feedback-block">
-                <input 
-    type="text" 
-    id="user-name" 
-    class="feedback-input" 
-    data-testid="name-input" 
-    placeholder="Ваше ім'я..."
-    maxlength="25"
-    minlength="2"
-    pattern="^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ' ]+$"
-    title="Використовуйте лише букви"
-    autocomplete="off"
->
-                
-                <button 
-                    id="contact-btn" 
-                    class="feedback-button" 
-                    data-testid="submit-button"
-                    onclick="handleContactClick()"
-                >
-                    Зв'язатися
-                </button>
-                
-                <div id="contact-options" class="contact-options" data-testid="contact-menu">
-                    <p id="greeting" data-testid="greeting-text" class="greeting-text"></p>
-                    
-                    <div class="dropdown-container">
-                    <div class="custom-select" id="custom-select">
-                        <div class="select-trigger">Оберіть спосіб зв'язку...</div>
-                        <div class="select-options">
-                            <div class="option" data-value="https://www.instagram.com/stocksy.shop/">Instagram</div>
-                            <div class="option" data-value="https://t.me/stocksy">Telegram</div>
-                            <div class="option" data-value="https://facebook.com/oleksii.nefedov">Facebook</div>
-                            <div class="option" data-value="mailto:stocksyalex@gmail.com">Ел. пошта</div>
-                        </div>
+    <h2 class="section-title">Напишіть мені</h2>
+    <div class="card-block feedback-block">
+        <input 
+            type="text" 
+            id="user-name" 
+            class="feedback-input" 
+            data-testid="name-input" 
+            placeholder="Ваше ім'я..."
+            maxlength="25"
+            minlength="2"
+            pattern="^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ' ]+$"
+            title="Використовуйте лише букви"
+            autocomplete="off"
+        >
+        
+        <button 
+            id="contact-btn" 
+            class="feedback-button" 
+            data-testid="submit-button"
+            onclick="handleContactClick()"
+        >
+            Зв'язатися
+        </button>
+        
+        <div id="contact-options" class="contact-options" data-testid="contact-menu">
+            <p id="greeting" data-testid="greeting-text" class="greeting-text"></p>
+            
+            <div class="dropdown-container">
+                <div class="custom-select" id="custom-select">
+                    <div class="select-trigger">Оберіть спосіб зв'язку...</div>
+                    <div class="select-options">
+                        <div class="option" data-value="https://www.instagram.com/stocksy.shop/">Instagram</div>
+                        <div class="option" data-value="https://t.me/stocksy">Telegram</div>
+                        <div class="option" data-value="https://facebook.com/oleksii.nefedov">Facebook</div>
+                        <div class="option" data-value="mailto:stocksyalex@gmail.com">Ел. пошта</div>
                     </div>
+                </div>
 
-                    <button class="go-button" onclick="goToLink()">
-                        Перейти <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-                </div>
+                <button class="go-button" onclick="goToLink()">
+                    Перейти <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
         </div>
+        <input type="hidden" id="contact-select-value" value="">
+    </div>
+</div>
             
     <h2 class="section-title">Чим займаюсь</h2>
     <div class="card-block">
